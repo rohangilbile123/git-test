@@ -1,0 +1,28 @@
+name: Git Clone and List Files
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  clone-and-list:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+        
+      - name: Install Git
+        run: sudo apt-get install git -y
+        
+      - name: Clone small-test-repo
+        run: git clone https://github.com/rtyley/small-test-repo
+
+      - name: List all files
+        run: |
+          cd small-test-repo
+          ls -R
