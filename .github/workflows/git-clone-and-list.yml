@@ -3,10 +3,7 @@ name: Git Clone and List Files
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - master
 
 jobs:
   clone-and-list:
