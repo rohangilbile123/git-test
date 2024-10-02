@@ -1,0 +1,17 @@
+name: Testing Github Action
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  clone-and-list:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+        
+      - name: Print my name 
+        run: echo "Rohan"
